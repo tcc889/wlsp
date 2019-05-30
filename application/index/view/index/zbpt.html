@@ -1,0 +1,133 @@
+{extend name='xxx/mb'/}
+
+{block name='main'}
+
+
+<div class="contbar" style="width:70%">
+    <div class="address" style="font-size: 14px; ">
+        <img src="http://srm.weilongshipin.com/Tonotice/address_home.jpg">
+        <span>当前位置：</span> <a href="/Tonotice.html">招标公告</a>
+        <!-- &gt; <a href="/Tonotice.html">招标公告</a> &gt; -->
+    </div>
+    <div class="add_blank"></div>
+    <div id="item" name="item">
+        <div class="item">
+            <p style="font-size: 14px;border-bottom: 1px; ">
+                <a href="index/index/detail" onclick="goNocInfo(this.innerHTML)" id="noticeName" style="float: left">
+                    漯河卫到低压配电、压力管道安装招标公告
+                </a>
+                <span style="float: right" id="budate">
+                    2019-05-27
+                    <span>
+
+                    </span>
+                </span>
+            </p>
+            <br>
+        </div>
+    </div>
+    <script>
+
+        function getpageCount() {
+            $.ajax({
+                url: "/jeecg/tDNoticeController.do?getResCount",
+                type: "get",
+                dataType: "json",
+                success: function (data) {
+                    <!-- debugger; -->
+                    var count = data.count;
+                    totalData = count;
+                    $('.M-box').pagination({
+                        totalData: totalData,
+//						        coping :true,
+                        showData: 20,
+                        callback: function (api) {
+                            <!-- debugger; -->
+                            $('.now').text(api.getCurrent());
+                            pageNo = api.getCurrent();
+                            page(pageNo);
+                        }
+                    }, function (api) {
+                        $('.now').text(api.getCurrent());
+                    });
+                },
+                error: function (data) {
+                    // alert('请使用兼容的浏览器！');
+                }
+            });
+        }
+
+        $(document).ready(function () {
+            <!-- debugger; -->
+            var totalData;
+//                    page(i);
+            var pageNo;
+            getpageCount();
+            page(pageNo);
+        });
+
+        function page(i) {
+//					debugger;
+            if (i == null || i == undefined) {
+                i = 1;
+            }
+            $.ajax({
+                url: "/jeecg/tDNoticeController.do?getNoticeList&pageSize=20&page=" + i,
+                type: "get",
+                dataType: "json",
+                success: function (data) {
+                    var da = data.retData;
+                    var html = "";
+                    $(da).each(function (i, obj) {
+                        html += "<div class='item'><p style='font-size: 14px;border-bottom: 1px; '>" +
+                            "<a href='#' onclick='goNocInfo(this.innerHTML)' id='noticeName' style='float: left'>" + obj.notice_name + "</a>" +
+                            //									"<em style='display: none;' id='notId'>"+obj.id+"</em>"+
+                            "<span style='float: right' id='budate'>"
+                            + obj.create_date + "<span></p><br></div>";
+                    });
+
+                    $('#item').html(html);
+                },
+                error: function (data) {
+                    //alert(data.retMsg);
+                }
+            });
+        }
+
+        function goNocInfo(str) {
+            <!-- debugger; -->
+            var noticeName = str;
+            document.title = noticeName;
+            var budate = $("#budate").text();
+//				 var notId = $("#notId").text();
+            $.ajax({
+                url: "/jeecg/tDNoticeController.do?getNocticInfo&noticeName=" + noticeName,
+                type: "get",
+                dataType: "json",
+                success: function (data) {
+                    var context = data.content;
+                    var html = "";
+                    html += "<p style='font-size: 20px;text-align: center;font-weight: bold;margin-bottom:15px;'>" + noticeName + "</p>" +
+                        "<span style='float: right;padding-right: 240px;font-size: 14px;'>" +
+                        "<span style='font-size: 14px;margin-right: 98px;'>" + data.name + "</span>" +
+                        data.create_date + "</span><br>" + context +
+                        "<p align='right' style='margin-right: 60px;'><a href='javascript:location.reload();'>" +
+                        "<img src='./Tonotice/back2.png' style='width: 55px;height: 36px;background:#f3782a'></a></p>";
+                    $('#item').html(html);
+                    $('#m-box').hide();
+
+                },
+                error: function (data) {
+                    // alert('请更换兼容的浏览器！');
+                }
+            });
+
+        }
+    </script>
+
+    <div class="m-style M-box" id="m-box"><span class="active">1</span><a href="javascript:;" data-page="2">2</a><a
+            href="javascript:;" class="next">&gt;</a></div>
+</div>
+
+
+{/block}
