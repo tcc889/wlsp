@@ -10,6 +10,7 @@
 
 namespace app\admin\controller;
 
+use app\admin\model\admin;
 use think\Controller;
 
 class Login extends Controller

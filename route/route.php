@@ -18,3 +18,5 @@ Route::get('hello/:name', 'index/hello');
 return [
 
 ];
+
+//Route::rule('wlspht', 'admin/Login/in')->method('GET,POST');
