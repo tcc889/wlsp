@@ -190,7 +190,7 @@ class Article extends Controller
 
             $im = \think\Image::open($path);
 
-            $im->thumb(60,60,\think\Image::THUMB_CENTER)->save($min);
+            $im->thumb(108,192,\think\Image::THUMB_CENTER)->save($min);
             return json(['code'=>1, 'thumb'=> $path, 'min'=> $min]);
         }else{
             return json(['code'=>0, 'info'=>$image->getError()]);
