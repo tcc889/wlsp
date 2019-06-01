@@ -3,59 +3,74 @@
 {block name='main'}
 
 
+<style>
+    .item {
+        display: inline-block;
+    }
+
+    .pagination>li {
+        float: left;
+        margin: 0 5px;
+        width: 38px;
+        height: 38px;
+        line-height: 38px;
+        background: #fff;
+        border: 1px solid #ebebeb;
+        color: #bdbdbd;
+        font-size: 14px;
+        text-align: center;
+    }
+
+
+    .contabr{
+        width: 70%;
+        height: 600px;
+    }
+
+
+
+</style>
+
 <div class="contbar" style="width:70%">
     <div class="address" style="font-size: 14px; ">
+
+
         <img src="http://srm.weilongshipin.com/Tonotice/address_home.jpg">
-        <span>当前位置：</span> <a href="/Tonotice.html">招标公告</a>
-        <!-- &gt; <a href="/Tonotice.html">招标公告</a> &gt; -->
+        <span>当前位置：</span> <a href="">招标公告</a>
+
+
     </div>
     <div class="add_blank"></div>
     <div id="item" name="item">
         <div class="item">
-            <p style="font-size: 14px;border-bottom: 1px; ">
-                <a href="index/index/detail" onclick="goNocInfo(this.innerHTML)" id="noticeName" style="float: left">
-                    漯河卫到低压配电、压力管道安装招标公告
-                </a>
-                <span style="float: right" id="budate">
-                    2019-05-27
-                    <span>
+            <ul class="clearfix">
+                {foreach $list as $v}
 
-                    </span>
-                </span>
-            </p>
-            <br>
+                <div class="item"><p style="font-size: 14px;border-bottom: 1px; ">
+                    <a class="more1" href="{:url('index/Index/detail', ['id'=>$v['id']])}"> {$v.title}</a>
+                    <span style="float: right" id="budate">2019-05-27
+
+
+
+                        </span>
+                </p>
+                </div>
+                {/foreach}
+                <div class="clear"></div>
+            </ul>
         </div>
+        <div class="m-style M-box" id="m-box">
+
+
+            </div><span class="acctive"></span>
+    </div>
+
+
+    {$list|raw}
     </div>
     <script>
 
-        function getpageCount() {
-            $.ajax({
-                url: "/jeecg/tDNoticeController.do?getResCount",
-                type: "get",
-                dataType: "json",
-                success: function (data) {
-                    <!-- debugger; -->
-                    var count = data.count;
-                    totalData = count;
-                    $('.M-box').pagination({
-                        totalData: totalData,
-//						        coping :true,
-                        showData: 20,
-                        callback: function (api) {
-                            <!-- debugger; -->
-                            $('.now').text(api.getCurrent());
-                            pageNo = api.getCurrent();
-                            page(pageNo);
-                        }
-                    }, function (api) {
-                        $('.now').text(api.getCurrent());
-                    });
-                },
-                error: function (data) {
-                    // alert('请使用兼容的浏览器！');
-                }
-            });
-        }
+
 
         $(document).ready(function () {
             <!-- debugger; -->
@@ -125,9 +140,6 @@
         }
     </script>
 
-    <div class="m-style M-box" id="m-box"><span class="active">1</span><a href="javascript:;" data-page="2">2</a><a
-            href="javascript:;" class="next">&gt;</a></div>
-</div>
 
 
 {/block}

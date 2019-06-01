@@ -1,0 +1,283 @@
+<html lang="zh-CN"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>招募供应商</title>
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="http://srm.weilongshipin.com:80/jeecg/plug-in/mutiLang/zh-cn.js"></script><script type="text/javascript" src="http://srm.weilongshipin.com:80/jeecg/plug-in/jquery/jquery-1.9.1.js"></script><link rel="stylesheet" href="http://srm.weilongshipin.com:80/jeecg/plug-in/bootstrap3.3.5/css/bootstrap.min.css" type="text/css"><script type="text/javascript" src="http://srm.weilongshipin.com:80/jeecg/plug-in/bootstrap3.3.5/js/bootstrap.min.js"></script><link rel="stylesheet" href="http://srm.weilongshipin.com:80/jeecg/plug-in/bootstrap3.3.5/css/default.css" type="text/css"><script type="text/javascript" src="http://srm.weilongshipin.com:80/jeecg/plug-in/layer/layer.js"></script><link rel="stylesheet" href="http://srm.weilongshipin.com/jeecg/plug-in/layer/skin/layer.css" id="layui_layer_skinlayercss" style=""><script type="text/javascript" src="http://srm.weilongshipin.com:80/jeecg/plug-in/laydate/laydate.js"></script><link rel="stylesheet" href="http://srm.weilongshipin.com/jeecg/plug-in/laydate/theme/default/laydate.css?v=5.0.9" id="layuicss-laydate"><script type="text/javascript" src="http://srm.weilongshipin.com:80/jeecg/plug-in/Validform/js/Validform_v5.3.1_min_zh-cn.js"></script><script type="text/javascript" src="http://srm.weilongshipin.com:80/jeecg/plug-in/Validform/js/Validform_Datatype_zh-cn.js"></script><script type="text/javascript" src="http://srm.weilongshipin.com:80/jeecg/plug-in/Validform/js/datatype_zh-cn.js"></script><script type="text/javascript" src="http://srm.weilongshipin.com:80/jeecg/plug-in/Validform/plugin/passwordStrength/passwordStrength-min.js"></script><link rel="stylesheet" href="http://srm.weilongshipin.com:80/jeecg/plug-in/webuploader/custom.css" type="text/css"><script type="text/javascript" src="http://srm.weilongshipin.com:80/jeecg/plug-in/webuploader/webuploader.min.js"></script><link rel="stylesheet" href="http://srm.weilongshipin.com:80/jeecg/plug-in/themes/bootstrap-ext/css/validform-ext.css" type="text/css"><link rel="stylesheet" href="http://srm.weilongshipin.com:80/jeecg/plug-in/hplus/css/plugins/iCheck/custom.css" type="text/css"><script type="text/javascript" src="http://srm.weilongshipin.com:80/jeecg/plug-in/hplus/js/plugins/iCheck/icheck.min.js"></script><link rel="stylesheet" href="http://srm.weilongshipin.com:80/jeecg/plug-in/bootstrap3.3.5/css/default.css" type="text/css"><script type="text/javascript" src="http://srm.weilongshipin.com:80/jeecg/plug-in/themes/bootstrap-ext/js/common.js"></script><link rel="stylesheet" href="http://srm.weilongshipin.com:80/jeecg/plug-in/bootstrap3.3.5/css/bootstrap-form.css" type="text/css">
+</head>
+<body style="overflow:hidden;overflow-y:auto;">
+<h3 style="margin-top: 5%;margin-left: 8%">尊敬卫龙食品供应商：</h3>
+<h4 style="color: brown;margin-top: 20px;margin-left: 8%">
+    很高兴与贵公司真诚的合作！
+    为了方便合作，请您填写如下信息，请确保您所填写的信息属实，谢谢！
+</h4>
+<div class="container" style="width:100%; font-size: 14px;">
+
+    <div class="panel-body">
+        <form class="form-horizontal" role="form" id="formobj" action="tDCustomerController.do?doAdd" method="POST">
+            <input type="hidden" id="btn_sub" class="btn_sub">
+            <input type="hidden" id="id" name="id">
+            <div class="row">
+                <div class="bt-item col-md-6 col-sm-6" style="clear:both ;padding-top: 20px">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-3 col-xs-3 bt-label">
+                            品类 ：<em style="color: red">*</em>
+                        </div>
+                        <div class="col-md-9 col-sm-9 col-xs-9 bt-content">
+                            <select name="notype" class="form-control input-sm" datatype="*"> <option value="">   </option> <option value="60">食材类（肉类、蔬菜、调味品、干货、杂粮） </option> <option value="90">废品/三级品 </option> <option value="70">低值易耗/办公 </option> <option value="50">服务类 </option> <option value="20">基建工程 </option> <option value="40">资产设备 </option> <option value="10">生产物料(原料/物料) </option> <option value="30">促销物料/低耐品 </option> <option value="80">其他类型 </option></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="bt-item col-md-6 col-sm-6" style="clear:both ;padding-top: 18px">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-3 col-xs-3 bt-label">
+                            公司全称：<em style="color: red">*</em>
+                        </div>
+                        <div class="col-md-9 col-sm-9 col-xs-9 bt-content">
+                            <input name="companyDesc" type="text" class="form-control input-sm" maxlength="32" datatype="*" placeholder="请输入公司描述" ignore="checked">
+                        </div>
+                    </div>
+                </div>
+                <div class="bt-item col-md-6 col-sm-6" style="clear:both ;padding-top: 18px">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-3 col-xs-3 bt-label">
+                            公司产品描述：<em style="color: red">*</em>
+                        </div>
+                        <div class="col-md-9 col-sm-9 col-xs-9 bt-content">
+                            <input name="matnr" type="text" class="form-control input-sm" maxlength="32" datatype="*" placeholder="请输入公司主要产品描述">
+                        </div>
+                    </div>
+                </div>
+                <div class="bt-item col-md-6 col-sm-6" style="clear:both;padding-top: 18px">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-3 col-xs-3 bt-label">
+                            公司电话：<em style="color: red">*</em>
+                        </div>
+                        <div class="col-md-9 col-sm-9 col-xs-9 bt-content">
+                            <input name="comtel" type="text" class="form-control input-sm" maxlength="32" placeholder="请输入公司电话" ignore="checked">
+                        </div>
+                    </div>
+                </div>
+                <div class="bt-item col-md-6 col-sm-6" style="clear:both;padding-top: 18px">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-3 col-xs-3 bt-label">
+                            注册地址：<em style="color: red">*</em>
+                        </div>
+                        <div class="col-md-9 col-sm-9 col-xs-9 bt-content">
+                            <input name="address" type="text" class="form-control input-sm" maxlength="32" datatype="*" placeholder="请输入注册地址" ignore="checked">
+                        </div>
+                    </div>
+                </div>
+                <div class="bt-item col-md-6 col-sm-6" style="clear:both;padding-top: 18px">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-3 col-xs-3 bt-label">
+                            税号：<em style="color: red">*</em>
+                        </div>
+                        <div class="col-md-9 col-sm-9 col-xs-9 bt-content">
+                            <input name="suihao" type="text" class="form-control input-sm" maxlength="32" datatype="*" placeholder="请输入税号" ignore="checked">
+                        </div>
+                    </div>
+                </div>
+                <div class="bt-item col-md-6 col-sm-6" style="clear:both;padding-top: 18px">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-3 col-xs-3 bt-label">
+                            法人代表：<em style="color: red">*</em>
+                        </div>
+                        <div class="col-md-9 col-sm-9 col-xs-9 bt-content">
+                            <input name="frdb" type="text" class="form-control input-sm" maxlength="32" datatype="*" placeholder="请输入法人代表" ignore="checked">
+                        </div>
+                    </div>
+                </div>
+                <div class="bt-item col-md-6 col-sm-6" style="clear:both;padding-top: 18px">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-3 col-xs-3 bt-label">
+                            上传营业执照：
+                        </div>
+                        <div class="col-md-9 col-sm-9 col-xs-9 bt-content">
+                            <div id="yyfileuploader" class="wu-example"><div id="yyfilethelist" class="uploader-list"><table class="temptable"></table></div><div id="yyfile_progress_bar" class="progress-bar-ty " style="display:none"><div class="progress-ty"><span class="upload-label-ty" style="display:none;">正在加载...<b class="value">79%</b></span></div></div><div class="btns"><div id="yyfilepicker" class="webuploader-container"><div class="webuploader-pick btn-green btn-S">添加图片</div><div id="rt_rt_1dc6j3fkrg79154523q1tfa1kra1" style="position: absolute; top: 0px; left: 0px; width: 120px; height: 30px; overflow: hidden; bottom: auto; right: auto;"><input type="file" name="file" class="webuploader-element-invisible" multiple="multiple"><label style="opacity: 0; width: 100%; height: 100%; display: block; cursor: pointer; background: rgb(255, 255, 255);"></label></div></div></div></div><script type="text/javascript">Array.prototype.removeItem = function(val){var index = this.indexOf(val);if (index > -1) {this.splice(index, 1);}};var exsitPathArr_yyfile =new Array();$(function() { var state = 'pending';var $list=$('#yyfilethelist');var uploader = WebUploader.create({swf: 'plug-in/webuploader/Uploader.swf',server :'systemController/filedeal.do', pick: '#yyfilepicker',duplicate: false,resize: false,auto:true,fileVal:'file',fileNumLimit:6,fileSingleSizeLimit:5242880,formData:{isup:'1',swfTransform:'false',bizType:'null'}});var imageAdd_yyfile = true;$('#yyfilepicker').find('div:eq(0)').addClass('webuploader-pick btn-green btn-S');$('#filediv_yyfile').addClass('tempIMGdiv').append('<ul></ul>');
+                            $list.append('<table class="temptable"></table>');
+                            var showUploadProgress = function(progress,mycallback,obj){if(!obj){obj = $('#yyfile_progress_bar').find('.progress-ty');}if(!$('#yyfile_progress_bar').hasClass('active')){$('#yyfile_progress_bar').addClass('active');}obj.animate({width:progress+'%'},{duration:100,easing:'swing',complete:function(scope,i,elem){if(!!mycallback){mycallback();}}})}; var isSupportBase64 = function() {var data = new Image();var support = true;data.onload = data.onerror = function() {if( this.width != 1 || this.height != 1 ){support = false;}}//data['src'] = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==';
+                                return support;};var ratio = window.devicePixelRatio || 1;var thumbnailWidth = 100 * ratio;var thumbnailHeight = 100 * ratio;var yyfileaddImgli=function(src,name,xpath,flag){if(imageAdd_yyfile){var titleclass='hidetitle';//if(flag==1){titleclass='hidetitle';}
+                                var img = '<li><img name="' + name + 'img" class="tempimg" src="' + src + '"><div class="' + titleclass + '"><span';img+=' class="titledel">'+xpath+'</span><span';img+=xpath==0?' style="display:none;"' :' ';img+=' class="titledown">'+xpath+'</span></div></li>';$('#filediv_yyfile').find('ul').append(img);}}
+                            var addtrFile=function(id,name,text,downsrc,delflag){var namet = name;if(name.length>15){name = name.substring(0,15)+'...';}var trhtml='<tr  style="display:none"  class="item" id="'+id+'"><td title = '+namet+'>'+name+'</td><td class="state">'+text+'</td><td class="icontd"><span';trhtml+=downsrc==0?' style="display:none;"' :' ';trhtml+=' class="down icon-down">'+downsrc+'</span></td><td class="icontd"><span';trhtml+=' class="del icon-cha" style="overflow:hidden;">'+delflag+'</span></td>';trhtml+='<td></td></tr>';$list.children('table').append(trhtml);}
+                            var reset_yyfile_dataTypeInpVal=function(addOrdel){var obj = $("#yyfiledataTypeInp");if(obj.length>0){var objval=obj.val()||'';
+                                if (addOrdel == 1) {if(objval==''){obj.val('1');}else{obj.val(objval.toString()+(parseInt(objval.length)+1));}}else{if(objval.length <=1){obj.val('');}else{obj.val(objval.substr(0,objval.length-1));
+                                }
+                                }obj.blur();}}
+                        </script>
+                            <div class="form tempIMGdiv" id="filediv_yyfile"><ul></ul></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bt-item col-md-6 col-sm-6" style="clear:both;padding-top: 18px">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-3 col-xs-3 bt-label">
+                            营业执照到期日：<em style="color: red">*</em>
+                        </div>
+                        <div class="col-md-9 col-sm-9 col-xs-9 bt-content">
+                            <input name="budate" type="text" class="form-control input-sm laydate-date" placeholder="请选择营业执照到期时间" ignore="checked" lay-key="1">
+                        </div>
+                    </div>
+                </div>
+                <div class="bt-item col-md-6 col-sm-6" style="clear:both;padding-top: 18px">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-3 col-xs-3 bt-label">
+                            上传资质等级：
+                        </div>
+                        <div class="col-md-9 col-sm-9 col-xs-9 bt-content">
+                            <div id="zzfileuploader" class="wu-example"><div id="zzfilethelist" class="uploader-list"><table class="temptable"></table></div><div id="zzfile_progress_bar" class="progress-bar-ty " style="display:none"><div class="progress-ty"><span class="upload-label-ty" style="display:none;">正在加载...<b class="value">79%</b></span></div></div><div class="btns"><div id="zzfilepicker" class="webuploader-container"><div class="webuploader-pick btn-green btn-S">添加图片</div><div id="rt_rt_1dc6j3fl312lhl6a1c3s1uqpii64" style="position: absolute; top: 0px; left: 0px; width: 120px; height: 30px; overflow: hidden; bottom: auto; right: auto;"><input type="file" name="file" class="webuploader-element-invisible" multiple="multiple"><label style="opacity: 0; width: 100%; height: 100%; display: block; cursor: pointer; background: rgb(255, 255, 255);"></label></div></div></div></div><script type="text/javascript">Array.prototype.removeItem = function(val){var index = this.indexOf(val);if (index > -1) {this.splice(index, 1);}};var exsitPathArr_zzfile =new Array();$(function() { var state = 'pending';var $list=$('#zzfilethelist');var uploader = WebUploader.create({swf: 'plug-in/webuploader/Uploader.swf',server :'systemController/filedeal.do', pick: '#zzfilepicker',duplicate: false,resize: false,auto:true,fileVal:'file',fileNumLimit:6,fileSingleSizeLimit:5242880,formData:{isup:'1',swfTransform:'false',bizType:'null'}});var imageAdd_zzfile = true;$('#zzfilepicker').find('div:eq(0)').addClass('webuploader-pick btn-green btn-S');$('#filediv_zzfile').addClass('tempIMGdiv').append('<ul></ul>');
+                            $list.append('<table class="temptable"></table>');
+                            var showUploadProgress = function(progress,mycallback,obj){if(!obj){obj = $('#zzfile_progress_bar').find('.progress-ty');}if(!$('#zzfile_progress_bar').hasClass('active')){$('#zzfile_progress_bar').addClass('active');}obj.animate({width:progress+'%'},{duration:100,easing:'swing',complete:function(scope,i,elem){if(!!mycallback){mycallback();}}})}; var isSupportBase64 = function() {var data = new Image();var support = true;data.onload = data.onerror = function() {if( this.width != 1 || this.height != 1 ){support = false;}}//data['src'] = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==';
+                                return support;};var ratio = window.devicePixelRatio || 1;var thumbnailWidth = 100 * ratio;var thumbnailHeight = 100 * ratio;var zzfileaddImgli=function(src,name,xpath,flag){if(imageAdd_zzfile){var titleclass='hidetitle';//if(flag==1){titleclass='hidetitle';}
+                                var img = '<li><img name="' + name + 'img" class="tempimg" src="' + src + '"><div class="' + titleclass + '"><span';img+=' class="titledel">'+xpath+'</span><span';img+=xpath==0?' style="display:none;"' :' ';img+=' class="titledown">'+xpath+'</span></div></li>';$('#filediv_zzfile').find('ul').append(img);}}
+                            var addtrFile=function(id,name,text,downsrc,delflag){var namet = name;if(name.length>15){name = name.substring(0,15)+'...';}var trhtml='<tr  style="display:none"  class="item" id="'+id+'"><td title = '+namet+'>'+name+'</td><td class="state">'+text+'</td><td class="icontd"><span';trhtml+=downsrc==0?' style="display:none;"' :' ';trhtml+=' class="down icon-down">'+downsrc+'</span></td><td class="icontd"><span';trhtml+=' class="del icon-cha" style="overflow:hidden;">'+delflag+'</span></td>';trhtml+='<td></td></tr>';$list.children('table').append(trhtml);}
+                            var reset_zzfile_dataTypeInpVal=function(addOrdel){var obj = $("#zzfiledataTypeInp");if(obj.length>0){var objval=obj.val()||'';
+                                if (addOrdel == 1) {if(objval==''){obj.val('1');}else{obj.val(objval.toString()+(parseInt(objval.length)+1));}}else{if(objval.length <=1){obj.val('');}else{obj.val(objval.substr(0,objval.length-1));
+                                }
+                                }obj.blur();}}
+                            var imgDelReq=function(delpath,spanobj){$.post('systemController/filedeal.do',{path:delpath,swfTransform:'false',isdel:"1"},function(aj){var data=JSON.parse(aj);if(data.success){reset_zzfile_dataTypeInpVal(0);exsitPathArr_zzfile.removeItem(delpath);$list.children('.fordel').children('input').val(exsitPathArr_zzfile.join(','));var myimgli=$(spanobj).closest('li');myimgli.off().find('.hidetitle').off().end().remove();}});}
+                            var zzfileaddFile=function(file,filepath){
+                                uploader.makeThumb(file, function(error,src) {
+                                    if(error){return false;}
+                                    if(isSupportBase64()){if(filepath==''){zzfileaddImgli(src,file.id,0,0);}
+                                    }else if(filepath!=''){
+                                        var actSrc="img/server/"+filepath;
+                                        zzfileaddImgli(actSrc,file.id,0,0);}}, thumbnailWidth, thumbnailHeight );}
+                        function mygetFileName(filepath){var fileNameEndindex = filepath.lastIndexOf('_');var filenameSuffix = filepath.lastIndexOf('.');if(fileNameEndindex<0){fileNameEndindex = filepath.length;}if(filepath.lastIndexOf('\\')>0){return filepath.substring(filepath.lastIndexOf('\\')+1,fileNameEndindex)+filepath.substring(filenameSuffix);
+                        }else if(filepath.lastIndexOf('/')>0){return filepath.substring(filepath.lastIndexOf('/')+1,fileNameEndindex)+filepath.substring(filenameSuffix);}else{return filepath;}}function randomFor(n){var rnd='';for(var i=0;i<n;i++){rnd+=Math.floor(Math.random()*10);
+                        }
+                            return rnd;}
+                        </script>
+                            <div class="form tempIMGdiv" id="filediv_zzfile"><ul></ul></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bt-item col-md-6 col-sm-6" style="clear:both;padding-top: 18px">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-3 col-xs-3 bt-label">
+                            联系人：<em style="color: red">*</em>
+                        </div>
+                        <div class="col-md-9 col-sm-9 col-xs-9 bt-content">
+                            <input name="pernr" type="text" class="form-control input-sm" maxlength="32" datatype="*" placeholder="请输入联系人" ignore="checked">
+                        </div>
+                    </div>
+                </div>
+                <div class="bt-item col-md-6 col-sm-6" style="clear:both;padding-top: 18px">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-3 col-xs-3 bt-label">
+                            手机号码：<em style="color: red">*</em>
+                        </div>
+                        <div class="col-md-9 col-sm-9 col-xs-9 bt-content">
+                            <input name="phone" type="text" class="form-control input-sm" maxlength="32" datatype="m" placeholder="请输入手机号" ignore="checked">
+                        </div>
+                    </div>
+                </div>
+                <div class="bt-item col-md-6 col-sm-6" style="clear:both;padding-top: 18px">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-3 col-xs-3 bt-label">
+                            邮箱：<em style="color: red">*</em>
+                        </div>
+                        <div class="col-md-9 col-sm-9 col-xs-9 bt-content">
+                            <input name="email" type="text" class="form-control input-sm" maxlength="32" datatype="e" placeholder="请输入邮箱" ignore="checked">
+                        </div>
+                    </div>
+                </div>
+                <div class="bt-item col-md-6 col-sm-6" style="clear:both;padding-top: 18px">
+                    <div class="row">
+
+                        <div align="center">
+                            <input type="submit" value="注册供应商" onclick="subForm()" class="btn btn-default" style="width: 188px;color: #d0f1ff;background-color: #ef4300;text-align: center ">
+                            <a href="javascript:history.back(-1)">返回上一页</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+<script type="text/javascript">
+    var subDlgIndex = '';
+    $(document).ready(function() {
+        $(".laydate-datetime").each(function(){
+            var _this = this;
+            laydate.render({
+                elem: this,
+                format: 'yyyy-MM-dd HH:mm:ss',
+                type: 'datetime'
+            });
+        });
+        $(".laydate-date").each(function(){
+            var _this = this;
+            laydate.render({
+                elem: this
+            });
+        });
+        //单选框/多选框初始化
+        $('.i-checks').iCheck({
+            labelHover : false,
+            cursor : true,
+            checkboxClass : 'icheckbox_square-green',
+            radioClass : 'iradio_square-green',
+            increaseArea : '20%'
+        });
+
+        //表单提交
+
+
+    });
+    function subForm() {
+        $("#formobj").Validform({
+            tiptype:function(msg,o,cssctl){
+                if(o.type==3){
+                    validationMessage(o.obj,msg);
+                }else{
+                    removeMessage(o.obj);
+                }
+            },
+            btnSubmit : "#btn_sub",
+            btnReset : "#btn_reset",
+            ajaxPost : true,
+            beforeSubmit : function(curform) {
+            },
+            usePlugin : {
+                passwordstrength : {
+                    minLen : 6,
+                    maxLen : 18,
+                    trigger : function(obj, error) {
+                        if (error) {
+                            obj.parent().next().find(".Validform_checktip").show();
+                            obj.find(".passwordStrength").hide();
+                        } else {
+                            $(".passwordStrength").show();
+                            obj.parent().next().find(".Validform_checktip").hide();
+                        }
+                    }
+                }
+            },
+            callback : function(data) {
+                debugger;
+                if (data.success == true) {
+                    alert("恭喜您成功加入卫龙供应商行列！");
+                    window.location.href = "http://srm.weilongshipin.com";
+                } else {
+                    if (data.responseText == '' || data.responseText == undefined) {
+                        alert(data.msg);
+                    } else {
+                        try {
+                            var emsg = data.responseText.substring(data.responseText.indexOf('错误描述'), data.responseText.indexOf('错误信息'));
+                            alert(emsg);
+                        } catch (ex) {
+                            alert(data.responseText + "");
+                        }
+                    }
+                    return false;
+                }
+            }
+        });
+    }
+</script>
+
+</body></html>

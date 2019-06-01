@@ -2,22 +2,45 @@
 
 {block name='main'}
 
+<style>
 
-<div id="item" name="item"><p style="font-size: 20px;text-align: center;font-weight: bold;margin-bottom:15px;">
-</p>
-    {foreach $category as $v}
-    <a {eq name="info.category_id" value="$v['id']" }
-       class="on" {/eq} href="{:url('Index/index/zbpt',
-    ['id'=>$v['id']])}">{$v.name}</a>
-    {/foreach}
+    #a{
+        color: #0a6aa1;
+
+    }
+    p{
+        font-size: 20px;
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+    .contbar{
+        float: right;
+        width: 812px;
+        margin: 0;
+        padding: 0;
+        display: block;
+    }
+
+
+</style>
 
 
 
-    {info.title}
-    {info.author}
-    {info.content}
-    {$info.create_time|date='Y-m-d H:i:s'}
-    阅读数：{$info.hits}
+
+
+<div class="contbar">
+    <h1 style="font-size:30px"> {$info.title} </h1>
+
+    <br>
+
+    <div id="a">
+        <span>    来源：{$info.author}       {$info.create_time|date='Y-m-d H:i:s'}     阅读数：{$info.hits}</span>
+    </div>
+
+    <!--{$info.title}-->
+{$info.content|raw}
+
 
 
 </div>
